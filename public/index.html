@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FROM TEXT TO FEELING | AI Sentiment Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">FTTF</div>
+            <nav class="nav">
+                <span class="status-badge" id="api-status">API Ready</span>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">FROM TEXT<br>TO FEELING</h1>
+                <p class="hero-subtitle">문장을 입력하면 AI가 감성을 정교하게 분석합니다.</p>
+            </div>
+        </section>
+
+        <section class="input-section">
+            <div class="container">
+                <div class="panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Analyze Text</span>
+                    </div>
+                    <div class="panel-body">
+                        <textarea id="text-input" placeholder="분석하고 싶은 문장을 입력하세요 (최대 1000자)..." maxlength="1000"></textarea>
+                        <div class="button-wrapper">
+                            <button id="analyze-btn" class="btn-primary">
+                                <span class="btn-text">분석하기</span>
+                                <div class="loader" id="btn-loader" hidden></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="result-section" id="result-container" hidden>
+            <div class="container">
+                <div class="result-card">
+                    <div class="result-header">
+                        <div class="sentiment-badge" id="sentiment-badge">POSITIVE</div>
+                        <div class="confidence-score">
+                            <span class="label">Confidence</span>
+                            <span class="value" id="confidence-value">87%</span>
+                        </div>
+                    </div>
+                    <div class="result-body">
+                        <p class="reason-text" id="reason-text">문장에 긍정적인 표현이 많이 포함되어 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="error-section" id="error-container" hidden>
+            <div class="container">
+                <div class="error-box">
+                    <p id="error-message">오류가 발생했습니다. 다시 시도해주세요.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 FROM TEXT TO FEELING. Powered by OpenAI.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
